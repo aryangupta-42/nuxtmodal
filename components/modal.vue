@@ -1,6 +1,6 @@
 <template>
-  <div class="modalContainer" v-transition="modal">
-    <div class="modal">
+  <div class="modalContainer">
+    <div class="modal" v-bind:style="anim">
       <Header title="Title goes here" :click="handler" />
       <div class="line" />
       <Body
@@ -16,10 +16,25 @@ import Header from '~/components/modalHeader.vue'
 import Body from '~/components/modalBody.vue'
 
 export default {
-  props: ['handler'],
+  props: ['handler', 'disp'],
   components: {
     Header,
     Body
+  },
+  computed: {
+    anim () {
+      return {
+        animation: `${this.mod} 0.2s`
+      }
+    }
+  },
+  data () {
+    return {
+      mod: 'none'
+    }
+  },
+  mounted () {
+    this.mod = 'fade'
   }
 }
 

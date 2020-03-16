@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Modal v-if="disp === true" :handler="close" />
+    <Modal v-if="disp" :handler="close" :disp="disp" />
     <div class="btn" v-on:click="open">Open modal</div>
   </div>
 </template>
