@@ -1,6 +1,7 @@
 <template>
   <div class="bodyContainer">
     {{ content }}
+    <div class="bodyEndLine" />
   </div>
 </template>
 
