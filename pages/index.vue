@@ -1,17 +1,29 @@
 <template>
   <div class="container">
-    <Modal />
-    <div class="btn">Open modal</div>
+    <Modal v-if="disp === true" :handler="close" />
+    <div class="btn" v-on:click="open">Open modal</div>
   </div>
 </template>
 
 <script>
-
 import Modal from '~/components/modal.vue'
 
 export default {
   components: {
     Modal
+  },
+  data () {
+    return {
+      disp: false
+    }
+  },
+  methods: {
+    open () {
+      this.disp = true
+    },
+    close () {
+      this.disp = false
+    }
   }
 }
 </script>
