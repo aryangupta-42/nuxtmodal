@@ -1,39 +1,17 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        modal
-      </h1>
-      <h2 class="subtitle">
-        modal component using nuxt.js
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <Modal />
+    <div class="btn">Open modal</div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+
+import Modal from '~/components/modal.vue'
 
 export default {
   components: {
-    Logo
+    Modal
   }
 }
 </script>
@@ -46,27 +24,24 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.btn {
+  height: 45px;
+  width: 180px;
+  border-radius: 5px;
+  cursor: pointer;
+  line-height: 45px;
+  transition: 0.1s ease-out;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 1px solid black;
+}
+.btn:hover {
+  background-color: black;
+  color: white;
 }
 
-.links {
-  padding-top: 15px;
-}
 </style>
